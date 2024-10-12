@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ reset: true });
+    </script>
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Portfolio Page</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: rgb(22, 2, 32);
+            color: aliceblue;
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+        header{
+            border-radius: 0.4rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #2c0242;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 3.5rem;
+        }
+        nav ul{
+            display: flex;
+            justify-content: left;
+            font-size: 1.2rem;
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0 1.5rem;
+        }
+        nav ul li a{
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 1.1rem;
+        position: relative;
+        }
+        nav ul li a::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #00fbfffa;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;
+        }
+        nav ul li a:hover::after{
+            width: 100%;
+        }
+        nav .right{
+            color: rgb(244, 243, 239);
+            margin-right: 4rem;
+            font-size: 3rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .Gold{
+            color: rgb(10, 183, 186);
+        }
+        .firstsection{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+        .firstsection > div{
+            width: 35%;
+        }
+        .lefts1{
+            margin-top: 4em;
+            font-size: 2.5rem;
+        }
+        #text-display {
+            font-size: 3rem;
+        }
+        .rights1 img{
+            width: 90%;
+            margin-top: 4rem;
+            position: sticky;
+        }
+        #element2{
+            font-size: 2rem;
+        }
+        .secondsection{
+            max-width: max-content;
+            margin-left: 7.5em;
+        }
+        .btn1 {
+            padding: 10px;
+            background-color: #160220;
+            color: aliceblue;
+            font-size: 1rem;
+            border: 2px solid aqua;
+            cursor: pointer;
+            border-radius: 0.5rem;
+        }
+        .btn2{
+        padding: 11px;
+        background-color: #1378e2;
+        color: aliceblue;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        }
+        .btn3{
+        padding: 11px;
+        background-color: #1bce0b;
+        color: aliceblue;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        }
+        .third{
+            margin-left: 7em;
+            margin-top: 5em;
+            width: 80%;
+        }
+        #About{
+            padding: 80px 0;
+        }
+        .row{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .col-1{
+            flex-basis: 35%;
+            border-right: 3px solid wheat;
+        }
+        .col-2{
+            flex-basis: 60%;
+        }
+        .tab-title {
+            display: flex;
+            justify-content: left;
+        }
+
+        /* Individual tab styling */
+        .tab {
+            padding-right: 2rem;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .tab::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0eddda;
+            transition: width 0.3s ease;
+        }
+
+        .active::after {
+            width: 40%;
+        }
+
+        .tab-content {
+            display: none;
+        }
+        .active{
+            color: aqua;
+        }
+        .visible {
+            display: block;
+        }
+        .grn{
+            color: greenyellow;
+        }
+        .fourth {
+            width: 85%;
+            margin: auto;
+            margin-bottom: 3rem;
+        }
+        .skls1 ul{
+            margin-top: 1.2rem;
+            display: flex;
+            justify-content: left;
+            list-style: none;
+        }
+        .skls1 ul li{
+            padding: 1.35rem;
+            margin-right: 1.2rem;
+            border-radius: 2rem;
+            border-left: 2px solid greenyellow;
+            border-top: 2px solid cyan;
+            border-right: 2px solid rgb(47, 106, 255);
+            border-bottom: 2px solid rgb(220, 47, 255);
+        }
+        .skls1 ul li:hover{
+            color: #0edd8a;
+            background-color: rgba(160, 88, 248, 0.181);
+        }
+        .Gold a{
+            text-decoration: none;
+            font-size: 2.5rem;
+            color: cyan;
+        }
+        .fifth{
+            width: 85%;
+            margin: auto;
+        }
+        .achiv {
+            margin-top: 1.2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Corrected this line */
+            grid-gap: 3rem;
+        }
+        .achiv div{
+            background: #471f4740;
+            padding: 40px;
+            font-size: 14px;
+            font-weight: 300;
+            transition: background 0.5s, transform 0.4s;
+        }
+        .achiv div a{
+            font-weight: 700;
+            text-decoration: none;
+            color: rgb(240, 233, 18);
+            font-size: 12px;
+            margin-top: 15px;
+            display: inline-block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+        }
+        .achiv div:hover{
+            background: rgba(159, 7, 193, 0.304);
+            transform: translateY(-10px);
+        }
+        .footer {
+        margin-top: 3rem;
+        background-color: #202020; /* Dark background */
+        color: #fff; /* White text color */
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        }
+
+        .footer .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px; /* Space between icons */
+        margin-bottom: 10px;
+        }
+        .social-icons a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 3rem;
+            display: inline-block;
+            transition: 0.3s ease-in-out;
+        }
+        .social-icons a:hover{
+            font-size: 3.5rem;
+            color: aquamarine;
+        }
+        .footer p {
+        font-size: 14px;
+        margin: 0;
+        color: #bbb; /* Light gray text */
+        }
+        .sixth{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem;
+            margin-top: 3rem;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        fieldset{
+            border: 5px solid rgb(96, 0, 96);
+            border-radius: 1rem;
+            background: #2e013e73;
+        }
+        legend{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: greenyellow;
+            font-size: 1.5rem;
+            border: 2px solid rgb(96,0,96);
+            border-radius: 1rem;
+            padding: 0.5rem;
+        }
+        .lefts2{
+            flex-basis: 30%;
+        }
+        .lefts2 i{
+            color: mediumorchid;
+            font-size: 1.8rem;
+        }
+        .rights2{
+            flex-basis: 60%;
+        }
+        .rights2 form{
+            width: 100%;
+        }
+        form input, form textarea{
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #1b1b1b6e;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: greenyellow;
+            font-size: 1.2rem;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="left">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Achievements">Achievements</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="#Contact">Contact Me</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <span class="Gold">S</span><span id="element2"></span>
+        </div>
+    </nav>
+</header>
+<main>
+    <section class="firstsection" id="Home">
+        <div class="lefts1">Hi, I'am 
+            <span class="Gold"><a href="#About">Sarthak Dutta</a></span>
+            <br>
+            <span id="element"></span>
+        </div>
+        <div class="rights1">
+            <img src="pic2.png" alt="" height="400px">
+        </div>
+    </section>
+    <section class="secondsection">
+        <div class="buttons">
+            <a href="https://github.com/JoySarthak"><button class="btn1">Github</button></a>
+            <a href="https://www.linkedin.com/in/sarthak-dutta-0b8133303/"><button class="btn2">LinkedIn</button></a>
+            <a href="Resume.pdf" download><button class="btn3">Download Resume</button></a>
+        </div>
+    </section>
+        <section class="third" id="About">
+            <div class="container">
+                <div class="row">
+                <div class="col-1">
+                    <div class="fade-in">
+                    <img src="profilePic.jpg" alt="" height="400px" style="border-radius: 15px;">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="fadelft">
+                        <h1 style="font-size: 50px; font-weight: 500; color: rgb(11, 228, 240); 
+                        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">About Me</h1>
+                        <br>
+                        <p> I am Sarthak Dutta, currently persuing btech computer sciencce and engineering at Narula Institue of technology,
+                            with profound interest in coding and different languages, I am on a journey to become a Fullstack developer. My hobbies include
+                            tech research, about various tech products available all over the globe, including key interest in science and technology.
+                        </p>
+                    </div>
+                    <br>
+                <div class="fadelft">    
+                    <div class="tab-title">
+                        <div class="tab active" id="education-tab" onclick="showContent('education')">Education</div>
+                        <div class="tab" id="experience-tab" onclick="showContent('experience')">Experience</div>
+                    </div>
+                    <br>
+                    <div id="education-content" class="tab-content visible">
+                        <span class="Gold">Class X - 2019</span>
+                        <p class="grn">CISCE</p>
+                        <p>Sri Aurobindo Institute of Education.</p>
+                        <span class="Gold">Class XII - 2021</span>
+                        <p class="grn">ISC</p>
+                        <p>Sri Aurobindo Institute of Education.</p>
+                        <span class="Gold">Btech 2022-26</span>
+                        <p class="grn">CSE</p>
+                        <p>Narula Institue of Technology.</p>
+                    </div>
+                    <div id="experience-content" class="tab-content">
+                        <span class="Gold">Internship</span>
+                        <p class="grn">Machine Learning Using Python</p>
+                        <p>Globsyn finishing School & Technologies Ltd.</p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div> 
+        </section>
+    <section class="fourth" id="Skills">
+        <br>
+        <br>
+        <br>
+        <h1 style="font-size: 3rem; color: lime; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
+        'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Skills</h1>
+        <div class="fadelft"> 
+        <div class="skls1">
+            <ul>
+                <li>Python</li>
+                <li>NumPy</li>
+                <li>Pandas Dataframe</li>
+                <li>Matplotlib</li>
+                <li>Sklearn</li>
+                <li>Seaborn</li>
+            </ul>
+        </div>
+        <br>
+        <div class="skls1">
+            <ul>
+                <li>Java</li>
+                <li>C|C++</li>
+                <li>SQL</li>
+                <li>Html|CSS|Js</li>
+                <li>ML|AI|DSA</li>
+            </ul>
+        </div>
+        <br>
+        <div class="skls1">
+            <ul>
+                <li>Communication Fluent English</li>
+                <li>Github</li>
+                <li>Powerpoint Advanced</li>
+                <li>Powerbi</li>
+                <li>Anconda Navigator</li>
+            </ul>
+        </div>
+        <br>
+        </div>
+    </section>
+    <section class="fifth" id = "Achievements">
+        <br>
+        <br>
+        <br>
+            <h1 style="font-size: 3rem; color: lime; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
+            'Lucida Sans', Arial, sans-serif;">Achievements</h1>
+            <div class="fade-in">
+            <div class="achiv">
+                <div>
+                    <h2 class="Gold">IBM</h2>
+                    <p>Course on the foundation of AI, on IBM Skills Build Platform</p>
+                    <br>
+                    <img src="cert1.png" alt="" height="150px">
+                    <br>
+                    <a href="https://www.credly.com/badges/539145b3-6458-47d3-9a30-cab67ff67f93/public_url">Learn More</a>
+                </div>
+                <div>
+                    <h2 class="Gold">Coursera</h2>
+                    <p>Course on Object Oriented Data Data-Structures in C++, Illinos University</p>
+                    <br>
+                    <img src="cert2.png" alt="" height="150px">
+                    <br>
+                    <a href="https://coursera.org/share/f37bae18daf59a72ae5f6a43ac409a1d">learn More</a>
+                </div>
+                <div>
+                    <h2 class="Gold">Coursera</h2>
+                    <p>Course on Resposive Website Development, University of London</p>
+                    <br>
+                    <img src="cert3.png" alt="" height="150px">
+                    <br>
+                    <a href="https://coursera.org/share/a171f7a3813e840fe2c5428328cb3cd7">learn More</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Contact" class="fade-in">
+        <br>
+        <br>
+        <br>
+    <fieldset class="sixth"> 
+        <legend><h1>Contact Me</h1></legend>
+        <div class="lefts2">
+            <div><i class='bx bx-mail-send bx-burst bx-rotate-90' ></i><p>sarthakdutta2002@gmail.com</p></div>
+            <br>
+            <div><i class='bx bx-phone bx-tada bx-rotate-90' ></i><p>+91 XXXXX-XXXXX</p></div>
+            
+        </div>
+        <div class="rights2">
+            <form id="contactForm">
+                    <input type="text" id="name" required placeholder="Your Name">
+                    <input type="email" id="email" required placeholder="Your Email">
+                    <textarea id="message" rows="6" required placeholder="Text Here"></textarea>
+                <button type="submit" class="btn3">Send Message</button>
+            </form>
+        </div>
+        </div>
+        </fieldset>
+    </section>
+        <footer class="footer">
+        <div class="social-icons">
+          <a href="https://www.instagram.com/s_arthak_05/profilecard/?igsh=bTh3ajFnazJiam0x" target="_blank" class="social-link">
+            <i class='bx bxl-instagram' ></i></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100095334189314" target="_blank" class="social-link">
+            <i class='bx bxl-facebook-circle' ></i>
+          </a>
+          <a href="https://github.com/JoySarthak" target="_blank" class="social-link">
+            <i class='bx bxl-github' ></i>
+          </a>
+          <a href="https://www.linkedin.com/in/sarthak-dutta-0b8133303/" target="_blank" class="social-link">
+            <i class='bx bxl-linkedin-square' ></i>
+          </a>
+          <a href="sarthak2002dutta@gmail.com" class="social-link">
+            <i class='bx bxl-gmail' ></i>
+          </a>
+      </footer>
+</main>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#element', {
+      strings: ["Welcome To My Portfolio Page", "I'm Passionate About", "Data Analysis And Machine Learning,", 
+      "Web-designing And Database Management,", "Competitive Coding And Data-Structures."],
+      typeSpeed: 90,
+      backSpeed: 50,
+      backDelay: 600,
+      loop: true
+    });
+</script>
+<script>
+    var typed = new Typed('#element2', {
+      strings: ["ARTHAK"],
+      startDelay: 100,
+      typeSpeed: 500,
+      loop: false,
+      showCursor: false,
+    });
+</script>
+<script>
+    function showContent(type) {
+        let educationTab = document.getElementById("education-tab");
+        let experienceTab = document.getElementById("experience-tab");
+
+        let educationContent = document.getElementById("education-content");
+        let experienceContent = document.getElementById("experience-content");
+
+        if (type === 'education') {
+            educationContent.classList.add('visible');
+            experienceContent.classList.remove('visible');
+
+            educationTab.classList.add('active');
+            experienceTab.classList.remove('active');
+            return 0;  // Success return code
+        } else if (type === 'experience') {
+            experienceContent.classList.add('visible');
+            educationContent.classList.remove('visible');
+
+            experienceTab.classList.add('active');
+            educationTab.classList.remove('active');
+            return 0;  // Success return code
+        } else {
+            console.error('Unknown content type');  // Error handling
+            return 1;  // Error return code
+        }
+    }
+</script>
+<script>
+    ScrollReveal().reveal('.fade-in',{delay: 400,  // delay before animation starts (in milliseconds)
+    distance: '50px',  // distance the element moves during the animation
+    origin: 'bottom',  // direction from which the element will appear
+    duration: 1000,  // how long the animation takes (in milliseconds)
+    easing: 'ease-in-out',  // smoothness of the animation
+    });
+    ScrollReveal().reveal('.fadelft',{delay: 500,  // delay before animation starts (in milliseconds)
+        distance: '50px',  // distance the element moves during the animation
+        origin: 'left',  // direction from which the element will appear
+        duration: 1200,  // how long the animation takes (in milliseconds)
+        easing: 'ease-in-out',  // smoothness of the animation
+    });
+</script>
+</body>
+</html>
